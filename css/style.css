@@ -1586,6 +1586,164 @@ ul, ol {
   margin-bottom: 48px;
 }
 
+/* Estructura Teaser Llamativo y Exclusivo */
+.vr-teaser-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: clamp(28px, 4.5vw, 50px);
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .vr-teaser-body {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+  }
+}
+
+.vr-teaser-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.vr-teaser-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.25;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.vr-teaser-quote {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--gold-light);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.vr-teaser-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.vr-teaser-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vr-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  color: var(--cream);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+.vr-teaser-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(14, 13, 12, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(212, 175, 55, 0.05);
+}
+
+.vr-teaser-visual {
+  margin-bottom: 20px;
+}
+
+.vr-compass-preview {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.vr-compass-preview .vr-compass-ring {
+  width: 72px;
+  height: 72px;
+  border: 2px dashed var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  animation: rotateCompassSlow 20s linear infinite;
+}
+
+@keyframes rotateCompassSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.vr-compass-preview .compass-label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  /* contrarresta la rotación para que el texto se lea siempre */
+  animation: counterRotateCompass 20s linear infinite;
+}
+
+@keyframes counterRotateCompass {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.vr-compass-preview .vr-compass-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.btn-teaser-cta {
+  padding: 14px 28px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
+
+.btn-teaser-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+}
+
+.vr-teaser-subhint {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 12px;
+  letter-spacing: 0.04em;
+}
+
 .vr-badge-exclusive {
   background: linear-gradient(90deg, #2b2313, #1c170d);
   border-bottom: 1px solid var(--border-gold);
@@ -3336,6 +3494,7 @@ html, body {
 .flagship-grid > *,
 .flagship-features-list > *,
 .vr-content-grid > *,
+.vr-teaser-body > *,
 .vr-left-content,
 .vr-visual-side,
 .calc-body-grid > *,
@@ -3502,6 +3661,13 @@ html, body {
   /* ---- VR 360 EXPERIENCE ---- */
   .vr-showcase-card {
     overflow: hidden;
+  }
+  .vr-teaser-body {
+    padding: 24px 18px !important;
+    gap: 24px !important;
+  }
+  .vr-teaser-action {
+    padding: 24px 16px !important;
   }
   .vr-content-grid {
     display: flex !important;
